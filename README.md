@@ -1,4 +1,4 @@
-# EUDIW Issuer
+# EUDIW Issuer Front End
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
@@ -8,42 +8,14 @@ the [EUDI Wallet Reference Implementation project description](https://github.co
 
 ### Overview
 
-The EUDIW Issuer is an implementation of  the PID and (Q)EAA Provider service This service is currently undergoing a transition from OpenId4VCI draft 13 to draft 15 of the specification. Check the table below to see which components support which draft version.
+The **EUDIW Issuer Frontend** provides the web interface for interacting with the [EUDIW Issuer Backend](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py).  
+It enables users to authenticate, select credentials, and initiate issuance flows in accordance with the [OpenID for Verifiable Credential Issuance (OIDC4VCI)]((https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html)) specifications.
 
-The service provides, by default, support for `mso_mdoc` and `SD-JWT-VC`formats, for various credentials.
-
-For authenticating the user, it requires the use of eIDAS node, OAUTH2 server or a simple form (for testing purposes).
-
-
-### OpenId4VCI coverage
-
-This version of the EUDIW Issuer has partial support for the [OpenId for Verifiable Credential Issuance (draft 15)](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html) protocol with the following coverage:
+This frontend is designed to integrate seamlessly with the EUDIW Issuer services, supporting credential issuance using both `mso_mdoc` and `SD-JWT-VC` formats.
 
 
-| Feature                                                   | Coverage                                                        |
-|-------------------------------------------------------------------|-----------------------------------------------------------------|
-| [Authorization Code flow draft](api_docs/authorization.md)              | ✅ Support for credential configuration id, scope, (draft 13)               |
-| [Pre-authorized code flow](api_docs/pre-authorized.md)            | ✅ (draft 13)                                                       |
-| [Credential Offer](api_docs/credential_offer.md)                  | ✅ `authorization_code` , ✅ `pre-authorized_code`    (draft 13)          |
-| Dynamic Credential Request                                        | ✅ (draft 13)                                                             |
-| mso_mdoc format                                                   | ✅                                                              |
-| SD-JWT-VC format                                                  | ✅                                                              |
-| W3C VC DM                                                         | ❌                                                              |
-| [Token Endpoint](api_docs/token.md)                               | ✅ (draft 13)                                                             |
-| [Credential Endpoint](api_docs/credential.md)                     | ✅ Including proofs and repeatable invocations, (draft 15)               |
-| Credential Issuer MetaData                                        | ✅ Unsigned metadata, (draft 15)                                            | 
-| [Nonce endpoint](api_docs/nonce_endpoint.md)                    | ✅ (draft 15)                                                             | 
-| [Deferred Endpoint](api_docs/deferred.md)                         | ✅ (draft 15)                                                              |
-| Proof                                                             | ✅ JWT                                                 |
-| Credential response encryption                                    | ✅ (draft 15)                                                             |
-| [Notification Endpoint](api_docs/notification.md)                 | ✅                                                              |
-| Pushed authorization request                                      | ✅                                                              |
-| Wallet authentication                                             | ✅ public client                                                |
-| Demonstrating Proof of Possession (DPoP)                          | ❌                                                              |
-| PKCE                                                              | ✅                                                              |
+You can use the hosted version at [https://ec.issuer.eudiw.dev/](https://ec.issuer.eudiw.dev/), or run it locally for development.
 
-
-You can use the EUDIW Issuer at https://issuer.eudiw.dev/, or install it locally.
 
 
 ## :heavy_exclamation_mark: Disclaimer
@@ -75,6 +47,8 @@ Pre-requisites:
 
 + Python v. 3.9 or 3.10
 + Flask v. 2.3 or higher
++ NPM 10.6.0
++ NodeJS v20.12.2
 
 Click [here](install.md) for detailed installation instructions.
 
@@ -93,15 +67,7 @@ Please see detailed instructions in [install.md](install.md#4-make-your-local-eu
 
 Please see detailed instructions in [api_docs/add_credential.md](api_docs/add_credential.md).
 
-### C. Can I use my IACA certificate with the EUDIW Issuer?
 
-Yes. You must copy your IACA trusted certificate(s) (in PEM format) to the `trusted_CAs_path` folder. If you don't have an IACA certificate, we provide an example test IACA certificate for the country Utopia (UT).
-
-See more information in [api_docs/configuration.md](api_docs/configuration.md#1-service-configuration).
-
-### D. Can I use my Document Signer private key and certificate with the EUDIW Issuer?
-
-Yes. Please follow the instructions in [api_docs/configuration.md](api_docs/configuration.md#2-configuration-of-countries). If you don't have Document Signer private key and certificate, we provide  test private DS keys and certificates, for country Utopia (UT).
 
 ### E. How can I create a credential offer to issue a credential?
 
@@ -111,13 +77,10 @@ Please see detailed instructions in [api_docs/credential_offer.md](api_docs/cred
 
 Yes. Please see how in [api_docs/pre-authorized.md](api_docs/pre-authorized.md).
 
-### H. Can I run the issuer in a Docker container?
+### H. Can I run the issuer front end in a Docker container?
 
 Yes. Please see how in [Install Docker](install.md#6-docker).
 
-### I. Where can I find reference revocation service information.
-
-Information and guides on the revocation service can be found in the following [repository](https://github.com/eu-digital-identity-wallet/eudi-srv-statuslist-py).
 
 ## How to contribute
 
