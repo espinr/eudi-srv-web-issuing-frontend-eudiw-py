@@ -14,7 +14,7 @@ It enables users to authenticate, select credentials, and initiate issuance flow
 This frontend is designed to integrate seamlessly with the EUDIW Issuer services, supporting credential issuance using both `mso_mdoc` and `SD-JWT-VC` formats.
 
 
-You can use the hosted version at [https://ec.issuer.eudiw.dev/](https://ec.issuer.eudiw.dev/), or run it locally for development.
+You can use the hosted version at [https://issuer.eudiw.dev/](https://issuer.eudiw.dev/), or run it locally for development.
 
 
 
@@ -59,25 +59,19 @@ Click [here](install.md) for detailed instructions.
 
 ## 3. Frequently Asked Questions
 
-### A. How to make your local EUDIW Issuer available on the Internet?
+### A. How to make your local EUDIW Issuer Front-end available on the Internet?
 
 Please see detailed instructions in [install.md](install.md#4-make-your-local-eudiw-issuer-available-on-the-internet-optional).
 
-### B. How to add a new credential to the issuer ?
-
-Please see detailed instructions in [api_docs/add_credential.md](api_docs/add_credential.md).
-
-
-
-### E. How can I create a credential offer to issue a credential?
+### B. How can I create a credential offer to issue a credential?
 
 Please see detailed instructions in [api_docs/credential_offer.md](api_docs/credential_offer.md).
 
-### F. Can I test the pre-authorized flow?
+### C. Can I test the pre-authorized flow?
 
 Yes. Please see how in [api_docs/pre-authorized.md](api_docs/pre-authorized.md).
 
-### H. Can I run the issuer front end in a Docker container?
+### D. Can I run the EUDIW Issuer Front-end end in a Docker container?
 
 Yes. Please see how in [Install Docker](install.md#6-docker).
 

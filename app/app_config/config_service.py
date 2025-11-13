@@ -41,6 +41,8 @@ class ConfService:
 
     oauth_url = os.getenv("OAUTH_URL", "https://dev.issuer.eudiw.dev/oidc")
 
+    credentials_supported = os.getenv("CREDENTIALS_SUPPORTED", "*")
+
     # ------------------------------------------------------------------------------------------------
     # Error list (error number, error string)
     error_list = {

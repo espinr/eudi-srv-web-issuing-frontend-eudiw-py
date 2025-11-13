@@ -88,7 +88,7 @@ To run the EUDIW Issuer Front End, please follow these simple steps (some of whi
     ```
 
 9. Install Authorization Server
-    - Install the service according to [Issuer Authorization Server]()
+    - Install the service according to [Issuer Authorization Server](https://github.com/eu-digital-identity-wallet/eudi-srv-issuer-oidc-py/blob/main/install.md)
 
 10. Install Issuer Back End
     - Install the service according to [Issuer Back End](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/install.md)
@@ -161,21 +161,60 @@ server {
 
 ## 6. Docker
 
-To run the EUDIW issuer in Docker please follow these steps:
+This guide provides step-by-step instructions for deploying the **EUDIW Issuer** service using **Docker Compose v2**.
 
-1. Install Docker following the official instructions for your operating system : <https://docs.docker.com/engine/install/>
- TBD
+1. Install docker
 
-5. Run Docker
+    Ensure you have Docker installed on your system. Follow the **official installation instructions** for your operating system:
+    [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
 
-    TBD
 
-5. Docker logs
+2. Configure Docker Compose
 
-    Issuer logs in real time: `sudo docker logs -f eudiw-issuer`
-    All logs: `sudo docker logs eudiw-issuer`
+    The service's container orchestration is managed by the `docker-compose.yml` file.
 
-6. Stopping Docker Issuer
-   `sudo docker stop eudiw-issuer`
+    * **Customize the configuration:** Review and modify the local `docker-compose.yml` file to align with your specific deployment requirements (e.g., exposed ports, service names, volumes).
+    * *Reference file:* [docker-compose.yml](./docker-compose.yml)
+
+3. Set Up Environment Variables
+
+    Service parameters and sensitive settings are managed through an environment file.
+
+    * **Create the environment file:** We recommend copying the example file to create your local configuration.
+
+    * **Update variables:** Edit the newly created `.env` file with your specific settings and credentials.
+        * *Reference example:* [.env example](.env.example)
+
+
+4. Pull the Docker Image
+
+    ```
+    docker compose pull
+    ```
+
+5. Run the 
+
+    Start the EUDIW Issuer backend in detached mode (runs in the background):
+
+    ```
+    docker compose up -d
+    ```
+
+6. Check Logs
+
+    To confirm the service is running correctly and to monitor its output in real-time for troubleshooting, use the following command:
+    ```
+    docker compose logs -f
+    ```
+
+7. Deploy Related Services
+
+To complete the full EUDIW ecosystem, you will also need to deploy the associated Front-end and Back-end components if you haven't already.
+
+* **Back-end Installation:** Follow the guide to install the back-end component using Docker.
+    * [Back-end Deployment Guide](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/install.md#6-docker)
+
+* **Authorization Server Installation:** Follow the guide to install the OIDC authorization server component using Docker.
+    * [Authorization Server Deployment Guide](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-oidc-eudiw-py/blob/dev/install.md#6-docker)
 
 
