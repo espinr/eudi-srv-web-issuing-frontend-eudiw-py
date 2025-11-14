@@ -95,6 +95,12 @@ def setup_metadata():
 
             credentials_supported = data.get("credential_configurations_supported", {})
 
+            if cfgserv.credentials_supported != "*":
+            allowed_credentials = set(c.strip() for c in cfgserv.credentials_supported.split(","))
+            credentials_supported = {
+                k: v for k, v in credentials_supported.items() if k in allowed_credentials
+            }
+
         except Exception:
             for file in os.listdir(
                 dir_path + "/metadata_config/credentials_supported/"
@@ -125,9 +131,9 @@ def setup_metadata():
 
     old_domain = oidc_metadata["credential_issuer"]
 
-    new_domain = cfgserv.service_url
+    new_domain = cfgserv.issuer_url
 
-    """ openid_metadata = cast(
+    openid_metadata = cast(
         Dict[str, Any], replace_domain(openid_metadata, old_domain, new_domain)
     )
     oauth_metadata = cast(
@@ -136,7 +142,13 @@ def setup_metadata():
 
     oidc_metadata = cast(
         Dict[str, Any], replace_domain(oidc_metadata, old_domain, new_domain)
-    ) """
+    )
+
+
+    openid_metadata["issuer"] = cfgserv.service_url
+    openid_metadata["pushed_authorization_request_endpoint"] = f"{cfgserv.service_url}/pushed_authorization"
+    oidc_metadata["credential_issuer"] = cfgserv.service_url
+    oidc_metadata["display"]["logo"]["uri"] = f"{cfgserv.service_url}/ic-logo.png"
 
 
 setup_metadata()
