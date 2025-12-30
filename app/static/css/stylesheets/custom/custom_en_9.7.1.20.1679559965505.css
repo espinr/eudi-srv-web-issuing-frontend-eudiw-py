@@ -538,7 +538,7 @@ nav.navigation-left a:hover {
     width: 100%;
     min-height: 145px;
     color: #FFF;
-    background: #012b58
+    background: rgb(230, 106, 161);
 }
 
 .main-footer .container {
@@ -975,8 +975,8 @@ input[type="checkbox"] {
 .btn-primary:hover {
     text-decoration: underline;
     color: #FFF;
-    background-color: #012b58;
-    border: 2px solid #012b58
+    background: rgb(230, 106, 161);
+    border: 2px solid rgb(230, 106, 161);
 }
 
 .btn-primary:focus,
