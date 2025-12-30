@@ -1,5 +1,5 @@
 {
-  "authorization_endpoint": "https://dev.issuer.eudiw.dev/oidc/authorization",
+  "authorization_endpoint": "https://oidc.issuer.pbest.me/authorization",
   "backchannel_logout_session_required": true,
   "backchannel_logout_supported": true,
   "claims_parameter_supported": true,
@@ -30,7 +30,7 @@
     "ES384",
     "ES512"
   ],
-  "end_session_endpoint": "https://dev.issuer.eudiw.dev/oidc/session",
+  "end_session_endpoint": "https://oidc.issuer.pbest.me/session",
   "frontchannel_logout_session_required": true,
   "frontchannel_logout_supported": true,
   "grant_types_supported": [
@@ -53,11 +53,11 @@
     "HS384",
     "HS512"
   ],
-  "introspection_endpoint": "https://dev.issuer.eudiw.dev/oidc/introspection",
-  "issuer": "https://dev.issuer.eudiw.dev",
-  "jwks_uri": "https://dev.issuer.eudiw.dev/oidc/static/jwks.json",
-  "pushed_authorization_request_endpoint": "https://dev.issuer.eudiw.dev/pushed_authorization",
-  "registration_endpoint": "https://dev.issuer.eudiw.dev/oidc/registration",
+  "introspection_endpoint": "https://oidc.issuer.pbest.me/introspection",
+  "issuer": "https://issuer.pbest.me",
+  "jwks_uri": "https://oidc.issuer.pbest.me/static/jwks.json",
+  "pushed_authorization_request_endpoint": "https://issuer.pbest.me/pushed_authorization",
+  "registration_endpoint": "https://oidc.issuer.pbest.me/registration",
   "request_object_signing_alg_values_supported": [
     "RS256",
     "RS384",
@@ -90,12 +90,12 @@
     "public",
     "pairwise"
   ],
-  "token_endpoint": "https://dev.issuer.eudiw.dev/oidc/token",
+  "token_endpoint": "https://oidc.issuer.pbest.me/token",
   "token_endpoint_auth_methods_supported": [
     "public",
     "attest_jwt_client_auth"
   ],
-  "userinfo_endpoint": "https://dev.issuer.eudiw.dev/oidc/userinfo",
+  "userinfo_endpoint": "https://oidc.issuer.pbest.me/userinfo",
   "userinfo_signing_alg_values_supported": [
     "RS256",
     "RS384",
