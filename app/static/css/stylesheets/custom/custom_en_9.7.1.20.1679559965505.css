@@ -3678,3 +3678,7 @@ body.contrast .announcement-box.announcement-warn div.icon {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
+
+#main-content {
+    padding-top: 2rem;
+}
