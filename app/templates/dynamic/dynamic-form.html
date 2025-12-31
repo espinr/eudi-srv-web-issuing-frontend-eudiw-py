@@ -195,7 +195,7 @@
             </div>
             <div>
                 <label for="fileInput-{{name}}" class="cursor-pointer">
-                    <input type="radio" name="{{ name }}" value="PortUpload" id="OptionPortUpload-{{name}}"
+                    <input type="radio" name="{{ name }}" value="Port3" id="OptionPortUpload-{{name}}"
                         class="sr-only peer/portupload">
                     <div class="mt-2 p-4 border-2 border-dashed border-gray-300 rounded-lg text-center peer-checked/portupload:border-indigo-600">
                         <input type="file" name="{{ name }}" id="fileInput-{{name}}" class="hidden file-input" accept="image/jpeg">
@@ -448,7 +448,7 @@
                     const fileInput = event.target;
                     const file = fileInput.files[0];
                     const container = fileInput.closest('.dynamic-attribute-row');
-                    const uploadRadio = container.querySelector('input[type="radio"][value="PortUpload"]');
+                    const uploadRadio = container.querySelector('input[type="radio"][value="Port3"]');
                     const previewContainer = container.querySelector('[id^="preview-"]');
 
                     if (file && uploadRadio) {
@@ -502,7 +502,7 @@
 
             const fileInputs = document.querySelectorAll('.file-input');
             for (const fileInput of fileInputs) {
-                const radio = fileInput.closest('.dynamic-attribute-row').querySelector('input[type="radio"][value="PortUpload"]');
+                const radio = fileInput.closest('.dynamic-attribute-row').querySelector('input[type="radio"][value="Port3"]');
                 if (radio && radio.checked) {
                     if (!fileInput.files[0]) {
                         alert('Please select a file to upload or choose another portrait option.');
