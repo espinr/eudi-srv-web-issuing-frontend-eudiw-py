@@ -461,8 +461,8 @@
                                 img.src = e.target.result;
                                 img.className = 'w-24 h-auto rounded-lg mt-2 object-cover';
                                 previewContainer.appendChild(img);
-                                // Store the content in a new attribute
-                                uploadRadio.setAttribute('data-base64', e.target.result);
+                                // Store the content in a new attribute, removed data:image
+                                uploadRadio.setAttribute('data-base64', e.target.result.replace('data:image/jpeg;base64,', ''));
                             }
                             reader.readAsDataURL(file);
                         }
