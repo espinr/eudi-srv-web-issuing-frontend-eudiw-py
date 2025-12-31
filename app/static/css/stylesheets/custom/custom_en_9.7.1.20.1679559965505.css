@@ -163,10 +163,16 @@ body {
 }
 
 .main-header {
-    margin-bottom: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #b3b3b3
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #FF3562;
+    color: #ffffff ;
+    border-bottom: 2px solid #F84AA7;
+}
+
+.main-header h1 {
+    text-transform: uppercase;
+    font-weight: bolder;
 }
 
 .main-header .container {
@@ -538,7 +544,7 @@ nav.navigation-left a:hover {
     width: 100%;
     min-height: 145px;
     color: #FFF;
-    background: rgb(230, 106, 161);
+    background: #F84AA7;
 }
 
 .main-footer .container {
@@ -562,6 +568,10 @@ nav.navigation-left a:hover {
 .main-footer a,
 .main-footer a:hover {
     color: #FFF
+}
+
+.main-footer img {
+    max-height: fit-content;
 }
 
 .eu-login-link {
@@ -968,51 +978,51 @@ input[type="checkbox"] {
 .btn-primary {
     font-weight: bold;
     color: #FFF;
-    background: #004494;
-    border: 2px solid #004494
+    background: #F84AA7;
+    border: 2px solid #F84AA7
 }
 
 .btn-primary:hover {
     text-decoration: underline;
     color: #FFF;
-    background: rgb(230, 106, 161);
-    border: 2px solid rgb(230, 106, 161);
+    background: #FF3562;
+    border: 2px solid #FF3562;
 }
 
 .btn-primary:focus,
 .btn-primary.focus {
     color: #FFF !important;
-    background-color: #004494 !important;
-    border: 2px solid #ffd617 !important
+    background-color: #693668 !important;
+    border: 2px solid #ffffff !important
 }
 
 .btn-primary:active,
 .btn-primary.active,
 .open>.dropdown-toggle.btn-primary {
     color: #FFF;
-    background-color: #004494;
-    border: 2px solid #ffd617
+    background-color: #693668 !important;
+    border: 2px solid #ffffff !important
 }
 
 .btn-default {
     font-weight: bold;
-    color: #004494;
+    color: #ffffff;
     background: transparent;
-    border: 2px solid #004494
+    border: 2px solid #F84AA7
 }
 
 .btn-default:hover {
     text-decoration: underline;
     color: #FFF !important;
-    background: #004494;
-    border: 2px solid #004494
+    background: #FF3562;
+    border: 2px solid #FF3562
 }
 
 .btn-default:focus,
 .btn-default.focus {
     color: #FFF !important;
-    background-color: #004494 !important;
-    border: 2px solid #ffd617 !important
+    background-color: #693668 !important;
+    border: 2px solid #ffffff !important
 }
 
 .btn-cancel {
@@ -1048,8 +1058,8 @@ input[type="checkbox"] {
 .btn-back {
     font-weight: bold;
     color: #FFF;
-    background: #c46f6f;
-    border: 2px solid #000
+    background: #1B1B3A;
+    border: 2px solid #1B1B3A
   }
 
 .btn-back:before {
@@ -3666,4 +3676,10 @@ body.contrast .announcement-box.announcement-warn div.icon {
 
 .pt-10 {
     padding-top: 10px
+}
+
+.container h2, .container h3 {
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }

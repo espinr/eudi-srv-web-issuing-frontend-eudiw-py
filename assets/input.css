@@ -19,3 +19,19 @@
 .list-item {
   list-style-type: none;
 }
+
+button {
+  color: #FFF !important;
+  background: #F84AA7 !important;
+}
+
+button:hover {
+  color: #FFF !important;
+  background: #FF3562 !important;
+}
+
+button:focus, button:active, button:hover, button:link {
+  color: #ffffff !important;
+  background-color: #FF3562 !important;
+}
+
