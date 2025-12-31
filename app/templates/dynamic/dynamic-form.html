@@ -461,6 +461,8 @@
                                 img.src = e.target.result;
                                 img.className = 'w-24 h-auto rounded-lg mt-2 object-cover';
                                 previewContainer.appendChild(img);
+                                // Store the content in a new attribute
+                                uploadRadio.setAttribute('data-base64', e.target.result);
                             }
                             reader.readAsDataURL(file);
                         }
@@ -509,8 +511,8 @@
                         return false;
                     }
                 }
-                // The Base64 string into the value of the radio
-                radio.value = e.target.result; 
+                // The Base64 string stored in the attribute into the value of the radio
+                radio.value = radio.getAttribute('data-base64'); 
             }
             return true;
         }
