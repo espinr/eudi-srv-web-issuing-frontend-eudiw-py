@@ -468,3 +468,12 @@ def display_revocation_qr_code():
         )
 
     return jsonify({"status": "error", "message": "Payload not found"}), 400
+
+
+@frontend.route("/samples", methods=["GET"])
+def display_pid_login():
+    cfgservice.app_logger.info(f"redirect_url: {cfgservice.service_url}")
+    return render_template(
+        "samples/sports.html",
+        redirect_url=cfgservice.service_url,
+    )
