@@ -471,7 +471,7 @@ def display_revocation_qr_code():
 
 
 @frontend.route("/samples", methods=["GET"])
-def display_pid_login():
+def display_samples():
     cfgservice.app_logger.info(f"redirect_url: {cfgservice.service_url}")
     return render_template(
         "samples/sports.html",
