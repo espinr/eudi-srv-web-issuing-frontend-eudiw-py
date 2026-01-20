@@ -119,6 +119,62 @@ def display_form():
     return jsonify({"status": "error", "message": "Payload not found"}), 400
 
 
+@frontend.route("/display_preauth_credentials", methods=["POST"])
+def display_preauth_credentials():
+    raw_json_string = request.form.get("payload")
+
+    if raw_json_string:
+        try:
+            data_payload = json.loads(raw_json_string)
+
+        except json.JSONDecodeError:
+            return jsonify({"status": "error", "message": "Invalid JSON payload"}), 400
+
+        credential_id = data_payload.get("credential_id")
+        cfgservice.app_logger.info(f"credential_id: {credential_id}")
+        session_id = data_payload.get("session_id")
+        cfgservice.app_logger.info(f"session_id: {session_id}")
+        redirect_url = data_payload.get("redirect_url")
+        cfgservice.app_logger.info(f"redirect_url: {redirect_url}")
+
+        return render_template(
+            "dynamic/sports-credentials.html",
+            credential_id=credential_id,
+            redirect_url=redirect_url,
+        )
+
+    return jsonify({"status": "error", "message": "Payload not found"}), 400
+
+
+@frontend.route("/display_authorization_predefined_values", methods=["POST"])
+def display_authorization_predefined_values():
+    raw_json_string = request.form.get("payload")
+
+    if raw_json_string:
+        try:
+            data_payload = json.loads(raw_json_string)
+
+        except json.JSONDecodeError:
+            return jsonify({"status": "error", "message": "Invalid JSON payload"}), 400
+
+        session_id = data_payload.get("session_id")
+        cfgservice.app_logger.info(f"session_id: {session_id}")
+        presentation_data = data_payload.get("presentation_data")
+        cfgservice.app_logger.info(f"presentation_data: {presentation_data}")
+        redirect_url = data_payload.get("redirect_url")
+        cfgservice.app_logger.info(f"redirect_url: {redirect_url}")
+
+        return render_template(
+            "dynamic/form_authorize.html",
+            presentation_data=presentation_data,
+            user_id=session_id,
+            redirect_url=redirect_url,
+        )
+
+    return jsonify({"status": "error", "message": "Payload not found"}), 400
+
+
+
 @frontend.route("/display_authorization", methods=["POST"])
 def display_authorization():
     raw_json_string = request.form.get("payload")
