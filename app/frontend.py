@@ -457,6 +457,7 @@ def display_credential_offer_qr_code():
                 + json.dumps(credential_offer),
                 url_data=url_data,
                 tx_code=tx_code,
+                pre_auth_code=code,
                 qrcode=qrcode,
             )
         else:
