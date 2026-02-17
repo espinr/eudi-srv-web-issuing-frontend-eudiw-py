@@ -444,7 +444,11 @@ def display_credential_offer_qr_code():
         cfgservice.app_logger.info(f"tx_code: {tx_code}")
         code = data_payload.get("code")
         cfgservice.app_logger.info(f"code: {code}")
-        pre_authorized_code = data_payload.get("pre-authorized_code")
+        
+        try:
+            pre_authorized_code = credential_offer["grants"]["urn:ietf:params:oauth:grant-type:pre-authorized_code"]["pre-authorized_code"]
+        except Error:
+            pre_authorized_code = 'N/A'
 
         if tx_code and code:
             return render_template(
