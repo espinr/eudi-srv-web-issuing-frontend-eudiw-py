@@ -444,7 +444,7 @@ def display_credential_offer_qr_code():
         cfgservice.app_logger.info(f"tx_code: {tx_code}")
         code = data_payload.get("code")
         cfgservice.app_logger.info(f"code: {code}")
-        pre-authorized_code = data_payload.get("pre-authorized_code")
+        pre_authorized_code = data_payload.get("pre-authorized_code")
 
         if tx_code and code:
             return render_template(
@@ -458,7 +458,7 @@ def display_credential_offer_qr_code():
                 + json.dumps(credential_offer),
                 url_data=url_data,
                 tx_code=tx_code,
-                pre_auth_code=pre-authorized_code,
+                pre_auth_code=pre_authorized_code,
                 qrcode=qrcode,
             )
         else:
